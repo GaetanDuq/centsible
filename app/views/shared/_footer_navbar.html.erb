@@ -19,7 +19,7 @@
       <% end %>
     </div>
     <div class="nav-item">
-      <%= link_to "#", class: "nav-link d-flex flex-column align-items-center" do %>
+      <%= link_to categories_path, class: "nav-link d-flex flex-column align-items-center" do %>
         <i class="fa-solid fa-list icon <%= current_page?(categories_path) ? 'green' : '' %>" style="color: #828282;"></i>
         <h5 class="icon-text">Categories</h5>
       <% end %>
