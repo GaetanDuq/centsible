@@ -6,30 +6,29 @@
 <div id="dashboard_stats_container"
     class="d-flex flex-row box-size p-0 gap-3 mb-4">
   <div id="last_month_comparison_stat"
-      class="flex-fill rounded-5 shadow-sm p-3 bg-secondary">
-   <div class="fw-bold">Compared to last month</div>
-   <div class="fs-3 fw-bold text-primary">
+      class="flex-fill rounded-5 shadow-sm p-3 bg-secondary w-50">
+    <div class="fw-bold">Compared to last month</div>
+    <div class="fs-3 fw-bold text-primary">
       <% unless current_user.transactions.total_expenses_until_same_day_last_month == 0 %>
         <% "#{@percentage_compare = current_user.transactions.percentage_compared_to_last_month.round(3)*100}%" %>
         <%= "#{@percentage_compare.floor}%" %>
       <% else %>
         Not available yet
       <% end %>
-   </div>
-   <div>
+    </div>
+    <div>
       <% if current_user.transactions.total_expenses_until_same_day_last_month == 0 %>
-
       <% elsif current_user.transactions.percentage_compared_to_last_month.positive? %>
         You are spending more than last month.
       <% else %>
         Nice! You spent less.
       <% end %>
-   </div>
- </div>
- <div id="daily_average_stat" class="flex-fill rounded-5 shadow-sm p-3 bg-secondary">
-   <div class="fw-bold">Daily average</div>
-   <div class="fs-3 fw-bold">¥<%= current_user.transactions.daily_average %></div>
- </div>
+    </div>
+  </div>
+  <div id="daily_average_stat" class="flex-fill rounded-5 shadow-sm p-3 bg-secondary w-50">
+    <div class="fw-bold">Daily average</div>
+    <div class="fs-3 fw-bold">¥<%= current_user.transactions.daily_average %></div>
+  </div>
 </div>
 <!-- | -->
 <!-- | -->
